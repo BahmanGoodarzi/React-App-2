@@ -1,11 +1,12 @@
 import React from 'react';
-import { BsCurrencyDollor} from 'react-icons/bs';
+import { BsCurrencyDollor } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
 import { Stacked, Pie, Button, SparkLine } from '../components';
 import { earningData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
 import { useStateContext } from '../context/ContexProvider';
 
 const Ecommerce = () => {
+  const { currentColor } = useStateContext()
   return (
     <div className='mt-12'>
       <div className='flex flex-wrap lg:flex-nowrap justify-center'>
@@ -17,15 +18,15 @@ const Ecommerce = () => {
             </div>
           </div>
           <div className='mt-6'>
-            <Button color='white' bgColor='blue' text='Download' borderRadius='10px' size='sm' />
+            <Button color='white' bgColor={currentColor} text='Download' borderRadius='10px' size='sm' />
           </div>
         </div>
 
         <div className='flex flex-wrap justify-center items-center m-3 gap-1 '>
           {earningData.map((item) => (
             <div key={item.title} className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56 p-4 pt-9 rounded-xl'>
-              <button type='butten' style={{color: item.iconColor, backgroundColor: item.iconBg }} 
-              className='text-xl rounded-full p-4 hover:drop-shadow-sm'>
+              <button type='butten' style={{ color: item.iconColor, backgroundColor: item.iconBg }}
+                className='text-xl rounded-full p-4 hover:drop-shadow-sm'>
                 {item.icon}
               </button>
               <p className='mt-3'>
@@ -71,21 +72,21 @@ const Ecommerce = () => {
                 <p className='text-gray-500 mt-1'>Expense</p>
               </div>
               <div className='mt-5'>
-                <SparkLine 
-                height="80px"
-                width="200px"
-                color="blue"
+                <SparkLine
+                  height="80px"
+                  width="200px"
+                  color={currentColor}
                 />
               </div>
               <div className='mt-10'>
-              <Button color='white' bgColor='blue' text='Download Report' borderRadius='10px' size='sm' />
+                <Button color='white' bgColor={currentColor} text='Download Report' borderRadius='10px' size='sm' />
               </div>
             </div>
 
             <div>
               <Stacked
-              height="360px" 
-              width="380px"
+                height="360px"
+                width="380px"
               />
             </div>
           </div>
