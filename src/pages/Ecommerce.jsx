@@ -4,6 +4,8 @@ import { GoPrimitiveDot } from 'react-icons/go';
 import { Stacked, Pie, Button, SparkLine } from '../components';
 import { earningData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
 import { useStateContext } from '../context/ContexProvider';
+import ChartHome from '../components/Charts/ChartHome';
+import SmithChart from '../components/Charts/SmithChart';
 
 const Ecommerce = () => {
   const { currentColor } = useStateContext()
@@ -43,7 +45,7 @@ const Ecommerce = () => {
         </div>
       </div>
 
-      <div className='flex gap-10 flex-wrap justify-center'>
+      <div className='flex gap-6 flex-wrap justify-center items-center'>
         <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-900'>
           <div className='flex justify-between'>
             <p className='font-semibold text-xl'>Revenue Updates</p>
@@ -88,6 +90,33 @@ const Ecommerce = () => {
                 height="360px"
                 width="380px"
               />
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-8 w-full md:w-96">
+          <div className="p-4 rounded-2xl m-3 md:m-0" style={{ background: "#f6fff8" }}>
+            <div className='flex justify-between'>
+              <p className='font-semibold text-gray-700 text-2xl'>Earnings</p>
+              <div className='flex flex-col'>
+                <p className='font-semibold text-gray-700 text-2xl'>$63.448.78</p>
+                <span className='text-gray-500'>Monthly revenue</span>
+              </div>
+            </div>
+            <div>
+              <ChartHome />
+            </div>
+          </div>
+
+          <div className='p-8 rounded-2xl m-3 md:m-0' style={{ background: "#f6fff8" }}>
+            <div className='flex justify-between items-center'>
+              <div className='flex flex-col'>
+                <p className='font-semibold text-gray-700 text-2xl'>$43.246</p>
+                <span className='text-gray-500'>Yearly sales</span>
+              </div>
+              <div>
+                <SmithChart />
+              </div>
             </div>
           </div>
         </div>

@@ -7,7 +7,6 @@ const LineChart = () => {
   const { currentMode } = useStateContext;
   return (
     <ChartComponent id='line-chart' height='420px' tooltip={{ enable: true }}
-      background="#ced4da"
       primaryXAxis={LinePrimaryXAxis}
       primaryYAxis={LinePrimaryYAxis}>
       <Inject services={[DateTime, Tooltip, LineSeries, Legend]} />

@@ -7,8 +7,8 @@ import { Header } from '../../components';
 const Area = () => {
   const { currentMode } = useStateContext;
   return (
-    <div className='m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl'>
-      <Header category="Area" title="Inflation Rate in Percentage" />
+    <div className='m-4 md:m-10 mt-24 p-6 md:p-10 bg-white rounded-3xl'>
+      <Header category="Chart" title="Inflation Rate in Percentage" />
       <ChartComponent id='area-chart' height='420px' tooltip={{ enable: true }}
         background={currentMode === "Drak" ? "#343a40" : "#fff"}
         primaryXAxis={areaPrimaryXAxis}

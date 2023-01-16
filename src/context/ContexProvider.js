@@ -3,8 +3,8 @@ import React, { createContext, useContext, useState } from 'react';
 const StateContext = createContext();
 
 const initialState = {
-    chat: false,
     cart: false,
+    chat: false,
     userProfile: false,
     notification: false
 }
@@ -15,7 +15,7 @@ export const ContextProvider = ({ children }) => {
     const [screenSize, setscreenSize] = useState(undefined);
     const [currentColor, setCurrentColor] = useState('#6c757d');
     const [currentMode, setCurrentMode] = useState('Light');
-    const [themeSettings, setThemeSettings] = useState(false)
+    const [themeSettings, setThemeSettings] = useState(false);
 
     const setMode = (e) => {
         setCurrentMode(e.target.value);
@@ -33,6 +33,11 @@ export const ContextProvider = ({ children }) => {
         setIsClicked({ ...initialState, [clicked]: true })
     }
 
+    const handleUnclick = (clicked) => {
+        setIsClicked({ ...initialState, [clicked]: false })
+    }
+
+
     return (
         <StateContext.Provider
             value={{
@@ -40,6 +45,7 @@ export const ContextProvider = ({ children }) => {
                 setActiveMenu,
                 isClicked,
                 setIsClicked,
+                handleUnclick,
                 handleClick,
                 screenSize,
                 setscreenSize,
@@ -48,7 +54,7 @@ export const ContextProvider = ({ children }) => {
                 themeSettings,
                 setThemeSettings,
                 setMode,
-                setColor
+                setColor,
             }}>
             {children}
         </StateContext.Provider>

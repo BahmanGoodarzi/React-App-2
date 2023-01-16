@@ -53,7 +53,7 @@ const Navbar = () => {
           color={currentColor} dotColor='#e76f51' icon={<RiNotification3Line />} />
 
         <TooltipComponent content='Profile' position='BottomCenter'>
-          <div className='flex items-center gap-2 rounded-lg p-1 hover:bg-light-gray' onClick={() => handleClick('userProfile')}>
+          <div className='flex cursor-pointer items-center gap-2 rounded-lg p-1 hover:bg-light-gray' onClick={() => handleClick('userProfile')}>
             <img src={avatar} alt='avatar' className='rounded-full w-8 h-8' />
             <p>
               <span className='text-14 text-gray-600'>Hi,</span> {' '} <span className='text-14 text-gray-600 font-bold '>Michael</span>
@@ -61,11 +61,14 @@ const Navbar = () => {
             <MdKeyboardArrowDown className='text-14 text-gray-600' />
           </div>
         </TooltipComponent>
+        <div className='fixed top-14 right-8'>
+          {isClicked.userProfile && <UserProfile />}
+        </div>
 
         {isClicked.cart && <Cart />}
-        {isClicked.chat && <Chat />}
-        {isClicked.notification && <Notification />}
-        {isClicked.userProfile && <UserProfile />}
+        {/* {isClicked.chat && <Chat />}
+        {isClicked.notification && <Notification />} */}
+
       </div>
     </div>
   )
